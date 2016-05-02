@@ -1,0 +1,28 @@
+﻿<Window x:Class="Wpf.VisualQueue.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="647">
+    <Grid>
+        <Grid Height="70" HorizontalAlignment="Left" Margin="12,12,0,0" Name="grid1" VerticalAlignment="Top" Width="600">
+            
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="100" />
+            </Grid.ColumnDefinitions>
+            <Label Content="" Grid.Column="0" Height="70" HorizontalAlignment="Left" Name="queue_label_1" VerticalAlignment="Top" Width="100" BorderBrush="Black" BorderThickness="1" FontWeight="Bold" FontSize="24" HorizontalContentAlignment="Center" />
+            <Label Content="" Grid.Column="1" Height="70" HorizontalAlignment="Left" Name="queue_label_2" VerticalAlignment="Top" Width="100" BorderBrush="Black" BorderThickness="1" FontWeight="Bold" FontSize="24" HorizontalContentAlignment="Center" />
+            <Label Content="" Grid.Column="2" Height="70" HorizontalAlignment="Left" Name="queue_label_3" VerticalAlignment="Top" Width="100" BorderBrush="Black" BorderThickness="1" FontWeight="Bold" FontSize="24" HorizontalContentAlignment="Center" />
+            <Label Content="" Grid.Column="3" Height="70" HorizontalAlignment="Left" Name="queue_label_4" VerticalAlignment="Top" Width="100" BorderBrush="Black" BorderThickness="1" FontWeight="Bold" FontSize="24" HorizontalContentAlignment="Center" />
+            <Label Content="" Grid.Column="4" Height="70" HorizontalAlignment="Left" Name="queue_label_5" VerticalAlignment="Top" Width="100" BorderBrush="Black" BorderThickness="1" FontWeight="Bold" FontSize="24" HorizontalContentAlignment="Center" />
+            <Label Content="" Grid.Column="5" Height="70" HorizontalAlignment="Left" Name="queue_label_6" VerticalAlignment="Top" Width="100" BorderBrush="Black" BorderThickness="1" FontWeight="Bold" FontSize="24" HorizontalContentAlignment="Center" />
+        </Grid>
+        <Button Content="Create" Height="28" HorizontalAlignment="Left" Margin="12,134,0,0" Name="button_Create" VerticalAlignment="Top" Width="129" Click="button_Create_Click" />
+        <Button Content="Process" Height="28" HorizontalAlignment="Left" Margin="183,134,0,0" Name="button_Process" VerticalAlignment="Top" Width="129" Click="button_Process_Click" />
+        <ListBox Height="165" HorizontalAlignment="Left" Margin="412,134,0,0" Name="listBox1" VerticalAlignment="Top" Width="201" />
+        <Label Content="Head" Height="26" HorizontalAlignment="Left" Margin="41,88,0,0" Name="label1" VerticalAlignment="Top" Width="71" />
+    </Grid>
+</Window>
