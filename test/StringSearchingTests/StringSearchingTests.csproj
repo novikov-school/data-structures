@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{6F77BBD9-28A8-419E-9275-F0E2C75DE125}</ProjectGuid>
+    <ProjectGuid>{496AA9EB-A69F-4E51-8D3B-6DA7B7E1262E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Queue.Locking</RootNamespace>
-    <AssemblyName>Queue.Locking</AssemblyName>
+    <RootNamespace>StringSearchingTests</RootNamespace>
+    <AssemblyName>StringSearchingTests</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -34,6 +34,10 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="nunit.framework, Version=2.6.4.14350, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\NUnit.2.6.4\lib\nunit.framework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -43,14 +47,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Queue.cs" />
+    <Compile Include="StringSearchingTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Queue.Common\Queue.Common.csproj">
-      <Project>{E6346BA0-87B3-440B-A590-54DEB9215FD1}</Project>
-      <Name>Queue.Common</Name>
+    <ProjectReference Include="..\..\src\SimpleTextReplacement\SimpleTextReplacement.csproj">
+      <Project>{2e639f42-427c-48e3-9dde-63f436034da7}</Project>
+      <Name>SimpleTextReplacement</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\src\StringSearching\StringSearching.csproj">
+      <Project>{5548381e-592e-44da-84f5-ebf4774c7d0e}</Project>
+      <Name>StringSearching</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\Tracker\Tracker.csproj">
+      <Project>{4695ba37-9807-4265-baaf-e9d1404f8408}</Project>
+      <Name>Tracker</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
