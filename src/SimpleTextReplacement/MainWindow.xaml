@@ -1,0 +1,21 @@
+﻿<Window x:Class="SimpleTextReplacement.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="485" Width="553" >
+    <Grid>
+        <TextBox Height="101" HorizontalAlignment="Left" Name="txtContent" VerticalAlignment="Top" Width="508" Margin="12,12,0,0" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" AcceptsReturn="True" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="12,332,0,0" Name="txtFind" VerticalAlignment="Top" Width="150" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="212,332,0,0" Name="txtReplace" VerticalAlignment="Top" Width="150" />
+        <Button Content="Replace" Height="23" HorizontalAlignment="Left" Margin="416,331,0,0" Name="btnReplace" VerticalAlignment="Top" Width="75" Click="btnReplace_Click" />
+        <Label Content="Find" Height="28" HorizontalAlignment="Left" Margin="12,298,0,0" Name="label1" VerticalAlignment="Top" />
+        <Label Content="Replace" Height="28" HorizontalAlignment="Left" Margin="212,298,0,0" Name="label2" VerticalAlignment="Top" />
+        <TextBox Height="122" HorizontalAlignment="Left" Margin="12,160,0,0" Name="txtNaiveOutput" VerticalAlignment="Top" Width="251" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" />
+        <TextBox AcceptsReturn="True" Height="122" HorizontalAlignment="Left" Margin="269,160,0,0" Name="txtBoyerMooreOutput" TextWrapping="Wrap" VerticalAlignment="Top" VerticalScrollBarVisibility="Auto" Width="251" />
+        <Label Content="Naive Algorithm" Height="28" HorizontalAlignment="Left" Margin="12,126,0,0" Name="label3" VerticalAlignment="Top" Width="251" />
+        <Label Content="Boyer-Moore-Horspool Algorithm" Height="28" HorizontalAlignment="Left" Margin="269,126,0,0" Name="label4" VerticalAlignment="Top" Width="251" />
+        <Label Content="Naive Comparisons" Height="28" HorizontalAlignment="Left" Margin="12,374,0,0" Name="label5" VerticalAlignment="Top" Width="150" />
+        <Label Content="Boyer-Moore-Horspool Comparisons" Height="28" HorizontalAlignment="Left" Margin="12,406,0,0" Name="label6" VerticalAlignment="Top" Width="207" />
+        <Label Content="&lt;unknown&gt;" Height="28" HorizontalAlignment="Left" Margin="212,374,0,0" Name="lblNaiveComparisonsValue" VerticalAlignment="Top" Width="150" />
+        <Label Content="&lt;unknown&gt;" Height="28" HorizontalAlignment="Left" Margin="212,406,0,0" Name="lblBoyerMooreComparisonsOutput" VerticalAlignment="Top" Width="150" />
+    </Grid>
+</Window>
