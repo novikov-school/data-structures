@@ -10,6 +10,7 @@ namespace StringSearching
         public IEnumerable<ISearchMatch> Search(string toFind, string toSearch)
         {
             #region Validate Parameters are not null
+
             if (toFind == null)
             {
                 throw new ArgumentNullException("toFind");
@@ -19,6 +20,7 @@ namespace StringSearching
             {
                 throw new ArgumentNullException("toSearch");
             }
+
             #endregion
 
             if (toFind.Length > 0 && toSearch.Length > 0)

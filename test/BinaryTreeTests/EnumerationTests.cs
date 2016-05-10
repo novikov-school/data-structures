@@ -53,7 +53,7 @@ namespace BinaryTreeTests
             tree.Add(1);
             tree.Add(8);
 
-            int[] expected = new[] { 1, 2, 3, 4, 5, 6, 7, 8 };
+            int[] expected = new[] {1, 2, 3, 4, 5, 6, 7, 8};
 
             int index = 0;
 
@@ -86,11 +86,12 @@ namespace BinaryTreeTests
             tree.Add(1);
             tree.Add(8);
 
-            int[] expected = new[] { 1, 2, 3, 4, 5, 6, 7, 8 };
+            int[] expected = new[] {1, 2, 3, 4, 5, 6, 7, 8};
 
             int index = 0;
 
-            tree.InOrderTraversal(item => Assert.AreEqual(expected[index++], item, "The item enumerated in the wrong order"));
+            tree.InOrderTraversal(
+                item => Assert.AreEqual(expected[index++], item, "The item enumerated in the wrong order"));
         }
 
         [Test]
@@ -115,11 +116,12 @@ namespace BinaryTreeTests
             tree.Add(1);
             tree.Add(8);
 
-            int[] expected = { 4, 2, 1, 3, 5, 7, 6, 8 };
+            int[] expected = {4, 2, 1, 3, 5, 7, 6, 8};
 
             int index = 0;
 
-            tree.PreOrderTraversal(item => Assert.AreEqual(expected[index++], item, "The item enumerated in the wrong order"));
+            tree.PreOrderTraversal(
+                item => Assert.AreEqual(expected[index++], item, "The item enumerated in the wrong order"));
         }
 
         [Test]
@@ -144,11 +146,12 @@ namespace BinaryTreeTests
             tree.Add(1);
             tree.Add(8);
 
-            int[] expected = { 1, 3, 2, 6, 8, 7, 5, 4 };
+            int[] expected = {1, 3, 2, 6, 8, 7, 5, 4};
 
             int index = 0;
 
-            tree.PostOrderTraversal(item => Assert.AreEqual(expected[index++], item, "The item enumerated in the wrong order"));
+            tree.PostOrderTraversal(
+                item => Assert.AreEqual(expected[index++], item, "The item enumerated in the wrong order"));
         }
     }
 }

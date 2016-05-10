@@ -42,13 +42,11 @@ namespace DoublyLinkedList.Tests
         }
 
         static object[] Clear_Success_Cases =
-                     {
-                            new int[] { 0 }, 
-                            new int[] { 0, 1 }, 
-                            new int[] { 0, 1, 2 }, 
-                            new int[] { 0, 1, 2, 3 }, 
-                     };
-
-
+        {
+            new int[] {0},
+            new int[] {0, 1},
+            new int[] {0, 1, 2},
+            new int[] {0, 1, 2, 3},
+        };
     }
 }

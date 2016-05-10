@@ -39,7 +39,7 @@ namespace DoublyLinkedList.Tests
             list.RemoveLast();
             Assert.AreEqual(0, list.Count);
             Assert.IsNull(list.Head);
-            Assert.IsNull(list.Tail);            
+            Assert.IsNull(list.Tail);
         }
 
         [Test]
@@ -72,7 +72,7 @@ namespace DoublyLinkedList.Tests
                 list.AddFirst(i);
             }
 
-            for (int i = 10; i > 0; i--) 
+            for (int i = 10; i > 0; i--)
             {
                 Assert.AreEqual(i, list.Count, "Unexpected list count");
                 list.RemoveFirst();
@@ -130,22 +130,21 @@ namespace DoublyLinkedList.Tests
         }
 
         static object[] Remove_Missing_Cases =
-                     {
-                       new object[] { new int[] { 0 }, 10 },
-                       new object[] { new int[] { 0, 1 }, 10 },
-                       new object[] { new int[] { 0, 1, 2 }, 10 },
-                       new object[] { new int[] { 0, 1, 2, 3 }, 10 }
-                     };
+        {
+            new object[] {new int[] {0}, 10},
+            new object[] {new int[] {0, 1}, 10},
+            new object[] {new int[] {0, 1, 2}, 10},
+            new object[] {new int[] {0, 1, 2, 3}, 10}
+        };
 
         static object[] Remove_Found_Cases =
-                     {
-                       new object[] { new int[] { 10 }, 10 },
-                       new object[] { new int[] { 10, 0 }, 10 },
-                       new object[] { new int[] { 0, 10 }, 10 },
-                       new object[] { new int[] { 0, 0, 10 }, 10 },
-                       new object[] { new int[] { 0, 10, 0 }, 10 },
-                       new object[] { new int[] { 10, 0, 0}, 10 },
-                     };
-
+        {
+            new object[] {new int[] {10}, 10},
+            new object[] {new int[] {10, 0}, 10},
+            new object[] {new int[] {0, 10}, 10},
+            new object[] {new int[] {0, 0, 10}, 10},
+            new object[] {new int[] {0, 10, 0}, 10},
+            new object[] {new int[] {10, 0, 0}, 10},
+        };
     }
 }

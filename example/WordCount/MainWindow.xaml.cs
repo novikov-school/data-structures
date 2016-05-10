@@ -119,7 +119,7 @@ namespace WordCount
         void GridViewColumnHeaderClickedHandler(object sender, RoutedEventArgs e)
         {
             GridViewColumnHeader headerClicked =
-                  e.OriginalSource as GridViewColumnHeader;
+                e.OriginalSource as GridViewColumnHeader;
 
             ListSortDirection direction;
 
@@ -149,12 +149,12 @@ namespace WordCount
                     if (direction == ListSortDirection.Ascending)
                     {
                         headerClicked.Column.HeaderTemplate =
-                          Resources["HeaderTemplateArrowUp"] as DataTemplate;
+                            Resources["HeaderTemplateArrowUp"] as DataTemplate;
                     }
                     else
                     {
                         headerClicked.Column.HeaderTemplate =
-                          Resources["HeaderTemplateArrowDown"] as DataTemplate;
+                            Resources["HeaderTemplateArrowDown"] as DataTemplate;
                     }
 
                     // Remove arrow from previously sorted header
@@ -173,13 +173,14 @@ namespace WordCount
         private void Sort(string sortBy, ListSortDirection direction)
         {
             ICollectionView dataView =
-              CollectionViewSource.GetDefaultView(listView1.ItemsSource);
+                CollectionViewSource.GetDefaultView(listView1.ItemsSource);
 
             dataView.SortDescriptions.Clear();
             SortDescription sd = new SortDescription(sortBy, direction);
             dataView.SortDescriptions.Add(sd);
             dataView.Refresh();
         }
+
         #endregion
     }
 

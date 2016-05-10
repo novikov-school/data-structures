@@ -48,8 +48,8 @@ namespace Queue.Tests
         [Test]
         public void Enumeration_Simple()
         {
-            int[] input =    { 2, 4, 7, 4, 2, 8, 1 };
-            int[] expected = { 8, 7, 4, 4, 2, 2, 1 };
+            int[] input = {2, 4, 7, 4, 2, 8, 1};
+            int[] expected = {8, 7, 4, 4, 2, 2, 1};
 
             PriorityQueue<int> queue = new PriorityQueue<int>();
 

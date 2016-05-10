@@ -11,10 +11,11 @@ namespace StringSearchingTests
     [TestFixture]
     public class StringSearchingTests
     {
-        private readonly IStringSearchAlgorithm[] SearchAlgoritms = new IStringSearchAlgorithm[] {
-                new NaiveStringSearch(),
-                new BoyerMoore(),
-        	};
+        private readonly IStringSearchAlgorithm[] _searchAlgoritms =
+        {
+            new NaiveStringSearch(),
+            new BoyerMoore(),
+        };
 
         public void Example(IStringSearchAlgorithm algorithm)
         {
@@ -23,11 +24,11 @@ namespace StringSearchingTests
 
             foreach (ISearchMatch match in algorithm.Search(toFind, toSearch))
             {
-                Console.WriteLine("Match found at: {0}", match.Start);
+                Console.WriteLine($@"Match found at: {match.Start}");
             }
         }
 
-        [TestCaseSource("SearchAlgoritms")]
+        [TestCaseSource(nameof(_searchAlgoritms))]
         public void SearchForMissingMatch(IStringSearchAlgorithm algorithm)
         {
             string toFind = "missing data";
@@ -39,7 +40,7 @@ namespace StringSearchingTests
             Assert.AreEqual(0, matches.Length, "The matches array should have not items.");
         }
 
-        [TestCaseSource("SearchAlgoritms")]
+        [TestCaseSource(nameof(_searchAlgoritms))]
         public void EmptySourceString(IStringSearchAlgorithm algorithm)
         {
             string toFind = string.Empty;
@@ -51,7 +52,7 @@ namespace StringSearchingTests
             Assert.AreEqual(0, matches.Length, "The matches array should have not items.");
         }
 
-        [TestCaseSource("SearchAlgoritms")]
+        [TestCaseSource(nameof(_searchAlgoritms))]
         [ExpectedException(typeof(ArgumentNullException))]
         public void NullSourceString(IStringSearchAlgorithm algorithm)
         {
@@ -61,7 +62,7 @@ namespace StringSearchingTests
             ISearchMatch[] matches = algorithm.Search(toFind, toSearch).ToArray();
         }
 
-        [TestCaseSource("SearchAlgoritms")]
+        [TestCaseSource(nameof(_searchAlgoritms))]
         public void EmptyTargetString(IStringSearchAlgorithm algorithm)
         {
             string toFind = "missing data";
@@ -73,7 +74,7 @@ namespace StringSearchingTests
             Assert.AreEqual(0, matches.Length, "The matches array should have not items.");
         }
 
-        [TestCaseSource("SearchAlgoritms")]
+        [TestCaseSource(nameof(_searchAlgoritms))]
         [ExpectedException(typeof(ArgumentNullException))]
         public void NullTargetString(IStringSearchAlgorithm algorithm)
         {
@@ -83,7 +84,7 @@ namespace StringSearchingTests
             ISearchMatch[] matches = algorithm.Search(toFind, toSearch).ToArray();
         }
 
-        [TestCaseSource("SearchAlgoritms")]
+        [TestCaseSource(nameof(_searchAlgoritms))]
         public void EmptyEmpty(IStringSearchAlgorithm algorithm)
         {
             string toFind = string.Empty;
@@ -95,7 +96,7 @@ namespace StringSearchingTests
             Assert.AreEqual(0, matches.Length, "The matches array should have not items.");
         }
 
-        [TestCaseSource("SearchAlgoritms")]
+        [TestCaseSource(nameof(_searchAlgoritms))]
         public void ExactSingleCharMatch(IStringSearchAlgorithm algorithm)
         {
             string toFind = "f";
@@ -106,10 +107,11 @@ namespace StringSearchingTests
             Assert.IsNotNull(matches, "The matches array should not be null.");
             Assert.AreEqual(1, matches.Length, "The matches array should have not items.");
             Assert.AreEqual(0, matches[0].Start, "The start of the string match should be 0");
-            Assert.AreEqual(toFind.Length, matches[0].Length, "The length of the string match should equal the string found");
+            Assert.AreEqual(toFind.Length, matches[0].Length,
+                "The length of the string match should equal the string found");
         }
 
-        [TestCaseSource("SearchAlgoritms")]
+        [TestCaseSource(nameof(_searchAlgoritms))]
         public void ExactMatch(IStringSearchAlgorithm algorithm)
         {
             string toFind = "found";
@@ -120,10 +122,11 @@ namespace StringSearchingTests
             Assert.IsNotNull(matches, "The matches array should not be null.");
             Assert.AreEqual(1, matches.Length, "The matches array should have not items.");
             Assert.AreEqual(0, matches[0].Start, "The start of the string match should be 0");
-            Assert.AreEqual(toFind.Length, matches[0].Length, "The length of the string match should equal the string found");
+            Assert.AreEqual(toFind.Length, matches[0].Length,
+                "The length of the string match should equal the string found");
         }
 
-        [TestCaseSource("SearchAlgoritms")]
+        [TestCaseSource(nameof(_searchAlgoritms))]
         public void MultipleMatchesExactString(IStringSearchAlgorithm algorithm)
         {
             string toFind = "found";
@@ -135,13 +138,15 @@ namespace StringSearchingTests
             Assert.AreEqual(2, matches.Length, "The matches array should have not items.");
 
             Assert.AreEqual(0, matches[0].Start, "The start of the string match should be 0");
-            Assert.AreEqual(toFind.Length, matches[0].Length, "The length of the string match should equal the string found");
+            Assert.AreEqual(toFind.Length, matches[0].Length,
+                "The length of the string match should equal the string found");
 
             Assert.AreEqual(5, matches[1].Start, "The start of the string match should be 5");
-            Assert.AreEqual(toFind.Length, matches[1].Length, "The length of the string match should equal the string found");
+            Assert.AreEqual(toFind.Length, matches[1].Length,
+                "The length of the string match should equal the string found");
         }
 
-        [TestCaseSource("SearchAlgoritms")]
+        [TestCaseSource(nameof(_searchAlgoritms))]
         public void MultipleMatchesLeadingJunk(IStringSearchAlgorithm algorithm)
         {
             string toFind = "found";
@@ -153,13 +158,15 @@ namespace StringSearchingTests
             Assert.AreEqual(2, matches.Length, "The matches array should have not items.");
 
             Assert.AreEqual(7, matches[0].Start, "The start of the string match should be 0");
-            Assert.AreEqual(toFind.Length, matches[0].Length, "The length of the string match should equal the string found");
+            Assert.AreEqual(toFind.Length, matches[0].Length,
+                "The length of the string match should equal the string found");
 
             Assert.AreEqual(12, matches[1].Start, "The start of the string match should be 5");
-            Assert.AreEqual(toFind.Length, matches[1].Length, "The length of the string match should equal the string found");
+            Assert.AreEqual(toFind.Length, matches[1].Length,
+                "The length of the string match should equal the string found");
         }
 
-        [TestCaseSource("SearchAlgoritms")]
+        [TestCaseSource(nameof(_searchAlgoritms))]
         public void MultipleMatchesTrailingString(IStringSearchAlgorithm algorithm)
         {
             string toFind = "found";
@@ -171,13 +178,15 @@ namespace StringSearchingTests
             Assert.AreEqual(2, matches.Length, "The matches array should have not items.");
 
             Assert.AreEqual(0, matches[0].Start, "The start of the string match should be 0");
-            Assert.AreEqual(toFind.Length, matches[0].Length, "The length of the string match should equal the string found");
+            Assert.AreEqual(toFind.Length, matches[0].Length,
+                "The length of the string match should equal the string found");
 
             Assert.AreEqual(5, matches[1].Start, "The start of the string match should be 5");
-            Assert.AreEqual(toFind.Length, matches[1].Length, "The length of the string match should equal the string found");
+            Assert.AreEqual(toFind.Length, matches[1].Length,
+                "The length of the string match should equal the string found");
         }
 
-        [TestCaseSource("SearchAlgoritms")]
+        [TestCaseSource(nameof(_searchAlgoritms))]
         public void MultipleMatchesMiddleString(IStringSearchAlgorithm algorithm)
         {
             string toFind = "found";
@@ -189,13 +198,15 @@ namespace StringSearchingTests
             Assert.AreEqual(2, matches.Length, "The matches array should have not items.");
 
             Assert.AreEqual(0, matches[0].Start, "The start of the string match should be 0");
-            Assert.AreEqual(toFind.Length, matches[0].Length, "The length of the string match should equal the string found");
+            Assert.AreEqual(toFind.Length, matches[0].Length,
+                "The length of the string match should equal the string found");
 
             Assert.AreEqual(10, matches[1].Start, "The start of the string match should be 10");
-            Assert.AreEqual(toFind.Length, matches[1].Length, "The length of the string match should equal the string found");
+            Assert.AreEqual(toFind.Length, matches[1].Length,
+                "The length of the string match should equal the string found");
         }
 
-        [TestCaseSource("SearchAlgoritms")]
+        [TestCaseSource("_searchAlgoritms")]
         public void MultipleMatchesLeadingMiddleTrailing(IStringSearchAlgorithm algorithm)
         {
             string toFind = "found";
@@ -207,10 +218,12 @@ namespace StringSearchingTests
             Assert.AreEqual(2, matches.Length, "The matches array should have not items.");
 
             Assert.AreEqual(7, matches[0].Start, "The start of the string match should be 0");
-            Assert.AreEqual(toFind.Length, matches[0].Length, "The length of the string match should equal the string found");
+            Assert.AreEqual(toFind.Length, matches[0].Length,
+                "The length of the string match should equal the string found");
 
             Assert.AreEqual(17, matches[1].Start, "The start of the string match should be 10");
-            Assert.AreEqual(toFind.Length, matches[1].Length, "The length of the string match should equal the string found");
+            Assert.AreEqual(toFind.Length, matches[1].Length,
+                "The length of the string match should equal the string found");
         }
     }
 }

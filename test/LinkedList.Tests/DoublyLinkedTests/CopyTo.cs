@@ -38,7 +38,7 @@ namespace DoublyLinkedList.Tests
                 list.AddLast(data);
             }
 
-            int preOffset = (DateTime.Now.Millisecond % 20) + 1;
+            int preOffset = (DateTime.Now.Millisecond%20) + 1;
             int postOffset = preOffset;
 
             int[] newArray = new int[preOffset + testCase.Length + postOffset];
@@ -52,11 +52,11 @@ namespace DoublyLinkedList.Tests
 
 
         static object[] CopyTo_Success_Cases =
-                        {
-                            new int[] { 0 }, 
-                            new int[] { 0, 1 }, 
-                            new int[] { 0, 1, 2 }, 
-                            new int[] { 0, 1, 2, 3 }, 
-                        };
+        {
+            new int[] {0},
+            new int[] {0, 1},
+            new int[] {0, 1, 2},
+            new int[] {0, 1, 2, 3},
+        };
     }
 }

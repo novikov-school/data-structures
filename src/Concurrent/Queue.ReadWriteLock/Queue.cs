@@ -34,7 +34,7 @@ namespace Queue.ReadWriteLock
                 // if the array needs to grow
                 if (_items.Length == _size)
                 {
-                    int newLength = (_size == 0) ? 4 : _size * 2;
+                    int newLength = (_size == 0) ? 4 : _size*2;
 
                     T[] newArray = new T[newLength];
 
@@ -171,10 +171,7 @@ namespace Queue.ReadWriteLock
         /// </summary>
         public int Count
         {
-            get
-            {
-                return _size;
-            }
+            get { return _size; }
         }
 
         /// <summary>

@@ -64,7 +64,7 @@ namespace Wpf.VisualQueue
                     case 5:
                         queue_label_6.Content = message.ToString();
                         break;
-                    default: 
+                    default:
                         break;
                 }
 

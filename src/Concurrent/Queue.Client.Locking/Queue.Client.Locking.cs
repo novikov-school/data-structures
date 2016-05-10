@@ -68,7 +68,7 @@ namespace Queue.Client.Locking
 
                 j.Perform();
                 count++;
-                if (count % 100 == 0)
+                if (count%100 == 0)
                 {
                     Console.WriteLine("{0} - Processed {1} jobs", Thread.CurrentThread.ManagedThreadId, count);
                 }

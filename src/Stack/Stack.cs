@@ -8,7 +8,7 @@ namespace Stack.List
     /// <typeparam name="T">The type of item contained in the stack</typeparam>
     public class Stack<T> : System.Collections.Generic.IEnumerable<T>
     {
-        private System.Collections.Generic.LinkedList<T> _list = 
+        private System.Collections.Generic.LinkedList<T> _list =
             new System.Collections.Generic.LinkedList<T>();
 
         /// <summary>
@@ -56,10 +56,7 @@ namespace Stack.List
         /// </summary>
         public int Count
         {
-            get
-            {
-                return _list.Count;
-            }
+            get { return _list.Count; }
         }
 
         /// <summary>

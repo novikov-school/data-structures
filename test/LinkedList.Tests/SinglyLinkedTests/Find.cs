@@ -37,21 +37,20 @@ namespace LinkedList.Tests
         }
 
         static object[] Find_Missing_Cases =
-                     {
-                       new object[] { new int[] { 0 }, 10 },
-                       new object[] { new int[] { 0, 1 }, 10 },
-                       new object[] { new int[] { 0, 1, 2 }, 10 },
-                       new object[] { new int[] { 0, 1, 2, 3 }, 10 }
-                     };
+        {
+            new object[] {new int[] {0}, 10},
+            new object[] {new int[] {0, 1}, 10},
+            new object[] {new int[] {0, 1, 2}, 10},
+            new object[] {new int[] {0, 1, 2, 3}, 10}
+        };
 
         static object[] Find_Found_Cases =
-                     {
-                       new object[] { new int[] { 10 }, 10 },
-                       new object[] { new int[] { 10, 0 }, 10 },
-                       new object[] { new int[] { 0, 10 }, 10 },
-                       new object[] { new int[] { 0, 1, 10 }, 10 },
-                       new object[] { new int[] { 0, 10, 0 }, 10 },
-                     };
-
+        {
+            new object[] {new int[] {10}, 10},
+            new object[] {new int[] {10, 0}, 10},
+            new object[] {new int[] {0, 10}, 10},
+            new object[] {new int[] {0, 1, 10}, 10},
+            new object[] {new int[] {0, 10, 0}, 10},
+        };
     }
 }

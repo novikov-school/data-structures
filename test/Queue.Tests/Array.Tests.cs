@@ -17,7 +17,7 @@ namespace Queue.Tests
             {
                 Assert.AreEqual(i, queue.Count, "The count was off before calling Enqueue...");
                 queue.Enqueue(i);
-                Assert.AreEqual(i+1, queue.Count, "The count was off after calling Enqueue...");
+                Assert.AreEqual(i + 1, queue.Count, "The count was off after calling Enqueue...");
             }
         }
 
@@ -39,10 +39,10 @@ namespace Queue.Tests
                 Assert.AreEqual(expected, queue.Peek(), "Peek returned an unexpected result");
 
                 Assert.AreEqual(expectedCount, queue.Count, "The count was off after Peek");
-                
+
                 Assert.AreEqual(expected, queue.Dequeue(), "Dequeue returned an unexpected result");
-                
-                Assert.AreEqual(expectedCount-1, queue.Count, "The count was off after Dequeue");
+
+                Assert.AreEqual(expectedCount - 1, queue.Count, "The count was off after Dequeue");
 
                 expectedCount--;
             }

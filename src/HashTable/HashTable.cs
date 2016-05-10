@@ -47,7 +47,7 @@ namespace HashTable
 
             // when the count exceeds this value, the next Add will cause the
             // array to grow
-            _maxItemsAtCurrentSize = (int)(initialCapacity * _fillFactor) + 1;
+            _maxItemsAtCurrentSize = (int) (initialCapacity*_fillFactor) + 1;
         }
 
         /// <summary>
@@ -62,7 +62,7 @@ namespace HashTable
             if (_count >= _maxItemsAtCurrentSize)
             {
                 // allocate a larger array
-                HashTableArray<TKey, TValue> largerArray = new HashTableArray<TKey, TValue>(_array.Capacity * 2);
+                HashTableArray<TKey, TValue> largerArray = new HashTableArray<TKey, TValue>(_array.Capacity*2);
 
                 // and re-add each item to the new array
                 foreach (HashTableNodePair<TKey, TValue> node in _array.Items)
@@ -74,7 +74,7 @@ namespace HashTable
                 _array = largerArray;
 
                 // update the new max items cached value
-                _maxItemsAtCurrentSize = (int)(_array.Capacity * _fillFactor) + 1;
+                _maxItemsAtCurrentSize = (int) (_array.Capacity*_fillFactor) + 1;
             }
 
             _array.Add(key, value);
@@ -116,10 +116,7 @@ namespace HashTable
 
                 return value;
             }
-            set
-            {
-                _array.Update(key, value);
-            }
+            set { _array.Update(key, value); }
         }
 
         /// <summary>
@@ -204,10 +201,7 @@ namespace HashTable
         /// </summary>
         public int Count
         {
-            get
-            {
-                return _count;
-            }
+            get { return _count; }
         }
     }
 }

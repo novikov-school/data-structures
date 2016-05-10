@@ -1,5 +1,4 @@
-﻿
-namespace HashTable
+﻿namespace HashTable
 {
     /// <summary>
     /// A node in the hash table array

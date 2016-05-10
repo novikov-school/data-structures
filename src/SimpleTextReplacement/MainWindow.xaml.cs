@@ -31,15 +31,16 @@ namespace SimpleTextReplacement
             IStringSearchAlgorithm boyerMoore = new BoyerMoore();
             StringBuilder boyerMooreResult = PerformSearchAndReplace(boyerMoore, input, find, replace);
             txtBoyerMooreOutput.Text = boyerMooreResult.ToString();
-            lblBoyerMooreComparisonsOutput.Content = ((IPerformanceTracker)boyerMoore).Comparisons;
+            lblBoyerMooreComparisonsOutput.Content = ((IPerformanceTracker) boyerMoore).Comparisons;
 
             IStringSearchAlgorithm Naive = new NaiveStringSearch();
             StringBuilder NaiveResult = PerformSearchAndReplace(Naive, input, find, replace);
             txtNaiveOutput.Text = NaiveResult.ToString();
-            lblNaiveComparisonsValue.Content = ((IPerformanceTracker)Naive).Comparisons;
+            lblNaiveComparisonsValue.Content = ((IPerformanceTracker) Naive).Comparisons;
         }
 
-        private static StringBuilder PerformSearchAndReplace(IStringSearchAlgorithm algorithm, string input, string find, string replace)
+        private static StringBuilder PerformSearchAndReplace(IStringSearchAlgorithm algorithm, string input, string find,
+            string replace)
         {
             StringBuilder result = new StringBuilder();
             int previousStart = 0;

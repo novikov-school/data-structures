@@ -5,28 +5,21 @@
     /// Add, Remove, Find and Enumerate
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public class LinkedList<T> : 
+    public class LinkedList<T> :
         System.Collections.Generic.ICollection<T>
     {
         /// <summary>
         /// The first node in the list or null if empty
         /// </summary>
-        public LinkedListNode<T> Head
-        {
-            get;
-            private set;
-        }
+        public LinkedListNode<T> Head { get; private set; }
 
         /// <summary>
         /// The last node in the list or null if empty
         /// </summary>
-        public LinkedListNode<T> Tail
-        {
-            get;
-            private set;
-        }
+        public LinkedListNode<T> Tail { get; private set; }
 
         #region Add
+
         /// <summary>
         /// Adds the specified value to the start of the linked list
         /// </summary>
@@ -89,9 +82,11 @@
 
             Count++;
         }
+
         #endregion
 
         #region Remove
+
         /// <summary>
         /// Removes the first node from the list.
         /// </summary>
@@ -145,6 +140,7 @@
                 Count--;
             }
         }
+
         #endregion
 
         #region ICollection
@@ -152,11 +148,7 @@
         /// <summary>
         /// The number of items currently in the list
         /// </summary>
-        public int Count
-        {
-            get;
-            private set;
-        }
+        public int Count { get; private set; }
 
         /// <summary>
         /// Adds the specified value to the front of the list
@@ -209,10 +201,7 @@
         /// </summary>
         public bool IsReadOnly
         {
-            get
-            {
-                return false;
-            }
+            get { return false; }
         }
 
         /// <summary>
@@ -289,7 +278,7 @@
         /// <returns>A Head to Tail enumerator</returns>
         System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator()
         {
-            return ((System.Collections.Generic.IEnumerable<T>)this).GetEnumerator();
+            return ((System.Collections.Generic.IEnumerable<T>) this).GetEnumerator();
         }
 
         /// <summary>

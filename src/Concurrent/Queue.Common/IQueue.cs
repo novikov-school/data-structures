@@ -28,10 +28,7 @@ namespace Queue.Common
         /// <summary>
         /// The number of items in the queue
         /// </summary>
-        int Count
-        {
-            get;
-        }
+        int Count { get; }
 
         /// <summary>
         /// Removes all items from the queue

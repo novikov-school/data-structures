@@ -25,7 +25,7 @@ namespace Queue.Client
 
                 JobProcessor processor = new JobProcessor(queue);
                 processor.Load();
-                
+
                 enumerateTimer.Start();
                 processor.EnumerateInParallel();
                 processor.Wait();
@@ -42,7 +42,8 @@ namespace Queue.Client
                 }
                 else
                 {
-                    Console.WriteLine("SUCCESS ({0}): Enumerate: {1}ms Process: {2}", queue.GetType().Name, enumerateTimer.ElapsedMilliseconds, processTimer.ElapsedMilliseconds);
+                    Console.WriteLine("SUCCESS ({0}): Enumerate: {1}ms Process: {2}", queue.GetType().Name,
+                        enumerateTimer.ElapsedMilliseconds, processTimer.ElapsedMilliseconds);
                 }
             }
 
@@ -59,11 +60,7 @@ namespace Queue.Client
 
         private volatile bool aborted = false;
 
-        public Exception Exception
-        {
-            get;
-            private set;
-        }
+        public Exception Exception { get; private set; }
 
         public JobProcessor(IQueue<Job> queue)
         {
@@ -129,7 +126,7 @@ namespace Queue.Client
                     Job j = queue.Dequeue();
                     j.Perform();
                     count++;
-                    if (count % 1000 == 0)
+                    if (count%1000 == 0)
                     {
                         if (aborted)
                         {
@@ -173,7 +170,7 @@ namespace Queue.Client
 
             int count = 0;
 
-            foreach(Job j in queue)
+            foreach (Job j in queue)
             {
                 count++;
             }
@@ -183,6 +180,5 @@ namespace Queue.Client
                 throw new InvalidOperationException("this will never happen");
             }
         }
-
     }
 }

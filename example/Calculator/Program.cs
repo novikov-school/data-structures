@@ -36,13 +36,13 @@ namespace Calculator
                             values.Push(lhs - rhs);
                             break;
                         case "*":
-                            values.Push(lhs * rhs);
+                            values.Push(lhs*rhs);
                             break;
                         case "/":
-                            values.Push(lhs / rhs);
+                            values.Push(lhs/rhs);
                             break;
                         case "%":
-                            values.Push(lhs % rhs);
+                            values.Push(lhs%rhs);
                             break;
                         default:
                             throw new ArgumentException($"Unrecognized token: {token}");

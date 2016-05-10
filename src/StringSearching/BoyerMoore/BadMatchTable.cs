@@ -30,10 +30,7 @@ namespace StringSearching.BoyerMoore
 
                 return value;
             }
-            set
-            {
-                _distances[index] = value;
-            }
-        }    
+            set { _distances[index] = value; }
+        }
     }
 }

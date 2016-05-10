@@ -9,7 +9,7 @@ namespace DoublyLinkedList.Tests
         public void Enumerate_Empty()
         {
             LinkedList<int> list = new LinkedList<int>();
-            foreach(int value in list)
+            foreach (int value in list)
             {
                 Assert.Fail("There should be nothing to enumerate");
             }
@@ -28,13 +28,13 @@ namespace DoublyLinkedList.Tests
             for (int i = 0; i < 3; i++)
             {
                 Assert.AreEqual(testCase.Length, list.Count,
-                                "The list length was not the expected value.");
+                    "The list length was not the expected value.");
 
                 int expectedIndex = 0;
                 foreach (int value in list)
                 {
                     Assert.AreEqual(testCase[expectedIndex], value,
-                                    "The enumerated node value was not the expected value.");
+                        "The enumerated node value was not the expected value.");
 
                     expectedIndex++;
                 }
@@ -54,7 +54,7 @@ namespace DoublyLinkedList.Tests
             for (int i = 0; i < 3; i++)
             {
                 Assert.AreEqual(testCase.Length, list.Count,
-                                "The list length was not the expected value.");
+                    "The list length was not the expected value.");
 
                 int expectedIndex = 0;
 
@@ -63,7 +63,7 @@ namespace DoublyLinkedList.Tests
                 foreach (int value in rawEnum)
                 {
                     Assert.AreEqual(testCase[expectedIndex], value,
-                                    "The enumerated value was not the expected value.");
+                        "The enumerated value was not the expected value.");
 
                     expectedIndex++;
                 }
@@ -89,17 +89,15 @@ namespace DoublyLinkedList.Tests
             }
 
             Assert.AreEqual(-1, expectedIndex, "The reverse enumeration ran the wrong number of times");
-
         }
 
 
         static object[] Enumeration_Success_Cases =
-                     {
-                            new int[] { 0 }, 
-                            new int[] { 0, 1 }, 
-                            new int[] { 0, 1, 2 }, 
-                            new int[] { 0, 1, 2, 3 }, 
-                     };
-
+        {
+            new int[] {0},
+            new int[] {0, 1},
+            new int[] {0, 1, 2},
+            new int[] {0, 1, 2, 3},
+        };
     }
 }
