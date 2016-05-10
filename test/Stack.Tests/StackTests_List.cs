@@ -48,7 +48,7 @@ namespace Stack.Tests
         {
             Stack<int> s = new Stack<int>();
 
-        	foreach (int i in testData)
+            foreach (int i in testData)
             {
                 s.Push(i);
             }
@@ -102,13 +102,13 @@ namespace Stack.Tests
         }
 
         object[] Push_TestData = new[]
-                                 {
-                                     new int[0],
-                                     new [] { 0 },
-                                     new [] { 0, 1 },
-                                     new [] { 0, 1, 2 },
-                                     new [] { 0, 1, 2, 3 },
-                                     new [] { 0, 1, 2, 3, 4 },
-                                 };
+        {
+            new int[0],
+            new[] {0},
+            new[] {0, 1},
+            new[] {0, 1, 2},
+            new[] {0, 1, 2, 3},
+            new[] {0, 1, 2, 3, 4},
+        };
     }
 }

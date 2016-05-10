@@ -26,7 +26,7 @@
             // if the array needs to grow
             if (_items.Length == _size)
             {
-                int newLength = (_size == 0) ? 4 : _size * 2;
+                int newLength = (_size == 0) ? 4 : _size*2;
 
                 T[] newArray = new T[newLength];
 
@@ -79,7 +79,7 @@
             // now we have a properly sized array and can focus on wrapping issues.
 
             // if _tail is at the end of the array we need to wrap around
-            if (_tail == _items.Length -1)
+            if (_tail == _items.Length - 1)
             {
                 _tail = 0;
             }
@@ -105,7 +105,7 @@
 
             T value = _items[_head];
 
-            if (_head == _items.Length-1)
+            if (_head == _items.Length - 1)
             {
                 // if the head is at the last index in the array - wrap around.
                 _head = 0;
@@ -140,10 +140,7 @@
         /// </summary>
         public int Count
         {
-            get
-            {
-                return _size;
-            }
+            get { return _size; }
         }
 
         /// <summary>

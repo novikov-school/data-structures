@@ -1,33 +1,25 @@
-﻿
-namespace DoublyLinkedList
+﻿namespace DoublyLinkedList
 {
     /// <summary>
     /// A linked list collection capable of basic operations such as 
     /// Add, Remove, Find and Enumerate
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public class LinkedList<T> : 
+    public class LinkedList<T> :
         System.Collections.Generic.ICollection<T>
     {
         /// <summary>
         /// The first node in the list or null if empty
         /// </summary>
-        public LinkedListNode<T> Head
-        {
-            get;
-            private set;
-        }
+        public LinkedListNode<T> Head { get; private set; }
 
         /// <summary>
         /// The last node in the list or null if empty
         /// </summary>
-        public LinkedListNode<T> Tail
-        {
-            get;
-            private set;
-        }
+        public LinkedListNode<T> Tail { get; private set; }
 
         #region Add
+
         /// <summary>
         /// Adds the specified value to the start of the linked list
         /// </summary>
@@ -62,7 +54,7 @@ namespace DoublyLinkedList
             {
                 // Before: Head -------> 5 <-> 7 -> null
                 // After:  Head -> 3 <-> 5 <-> 7 -> null
-                
+
                 // temp.Previous was null, now Head
                 temp.Previous = Head;
             }
@@ -92,7 +84,7 @@ namespace DoublyLinkedList
             else
             {
                 Tail.Next = node;
-                
+
                 // Before: Head -> 3 <-> 5 -> null
                 // After:  Head -> 3 <-> 5 <-> 7 -> null
                 // 7.Previous = 5
@@ -102,9 +94,11 @@ namespace DoublyLinkedList
             Tail = node;
             Count++;
         }
+
         #endregion
 
         #region Remove
+
         /// <summary>
         /// Removes the first node from the list.
         /// </summary>
@@ -159,6 +153,7 @@ namespace DoublyLinkedList
                 Count--;
             }
         }
+
         #endregion
 
         #region ICollection
@@ -166,11 +161,7 @@ namespace DoublyLinkedList
         /// <summary>
         /// The number of items currently in the list
         /// </summary>
-        public int Count
-        {
-            get;
-            private set;
-        }
+        public int Count { get; private set; }
 
         /// <summary>
         /// Adds the specified value to the front of the list
@@ -225,10 +216,7 @@ namespace DoublyLinkedList
         /// </summary>
         public bool IsReadOnly
         {
-            get
-            {
-                return false;
-            }
+            get { return false; }
         }
 
         /// <summary>
@@ -269,7 +257,7 @@ namespace DoublyLinkedList
                         {
                             // Before: Head -> 3 <-> 5 <-> 7 -> null
                             // After:  Head -> 3 <-------> 7 -> null
-                            
+
                             // previous = 3
                             // current = 5
                             // current.Next = 7
@@ -315,7 +303,7 @@ namespace DoublyLinkedList
         /// <returns>A Head to Tail enumerator</returns>
         System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator()
         {
-            return ((System.Collections.Generic.IEnumerable<T>)this).GetEnumerator();
+            return ((System.Collections.Generic.IEnumerable<T>) this).GetEnumerator();
         }
 
         /// <summary>

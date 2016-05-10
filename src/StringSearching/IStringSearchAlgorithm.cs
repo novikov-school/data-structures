@@ -15,5 +15,3 @@ namespace StringSearching
         int Length { get; }
     }
 }
-
-

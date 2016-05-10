@@ -21,7 +21,7 @@ namespace WordSorter
                 input = Console.ReadLine();
 
                 // split the line into words (on space)
-                string[] words = input.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+                string[] words = input.Split(new[] {' '}, StringSplitOptions.RemoveEmptyEntries);
 
                 // add each word to the tree
                 foreach (string word in words)

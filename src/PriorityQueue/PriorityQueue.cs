@@ -7,10 +7,10 @@ namespace Queue.Priority
     /// </summary>
     /// <typeparam name="T">The type of data stored in the collection</typeparam>
     public class PriorityQueue<T> : System.Collections.Generic.IEnumerable<T>
-        where T: IComparable<T>
+        where T : IComparable<T>
     {
         System.Collections.Generic.LinkedList<T> _items =
-            new System.Collections.Generic.LinkedList<T>();   
+            new System.Collections.Generic.LinkedList<T>();
 
         /// <summary>
         /// Adds an item to the queue in priority order
@@ -89,10 +89,7 @@ namespace Queue.Priority
         /// </summary>
         public int Count
         {
-            get
-            {
-                return _items.Count;
-            }
+            get { return _items.Count; }
         }
 
         /// <summary>

@@ -16,12 +16,12 @@ namespace NodeChains
             // +-----+------+
             // |  3  | null +
             // +-----+------+
-            Node first = new Node { Value = 3 };
+            Node first = new Node {Value = 3};
 
             // +-----+------+    +-----+------+
             // |  3  | null +    |  5  | null +
             // +-----+------+    +-----+------+
-            Node middle = new Node { Value = 5 };
+            Node middle = new Node {Value = 5};
 
             // +-----+------+    +-----+------+
             // |  3  |  *---+--->|  5  | null +
@@ -31,7 +31,7 @@ namespace NodeChains
             // +-----+------+    +-----+------+   +-----+------+
             // |  3  |  *---+--->|  5  | null +   |  7  | null +
             // +-----+------+    +-----+------+   +-----+------+
-            Node last = new Node { Value = 7 };
+            Node last = new Node {Value = 7};
 
             // +-----+------+    +-----+------+   +-----+------+
             // |  3  |  *---+--->|  5  |  *---+-->|  7  | null +

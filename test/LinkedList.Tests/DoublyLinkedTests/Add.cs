@@ -15,13 +15,13 @@ namespace DoublyLinkedList.Tests
                 list.Add(value);
             }
 
-            Assert.AreEqual(testCase.Length, list.Count, 
+            Assert.AreEqual(testCase.Length, list.Count,
                 "There was an unexpected number of list items");
 
-            Assert.AreEqual(testCase.Last(), list.Head.Value, 
+            Assert.AreEqual(testCase.Last(), list.Head.Value,
                 "The first item value was incorrect");
-            
-            Assert.AreEqual(testCase.First(), list.Tail.Value, 
+
+            Assert.AreEqual(testCase.First(), list.Tail.Value,
                 "The last item value was incorrect");
 
             int[] reversed = testCase.Reverse().ToArray();
@@ -116,11 +116,11 @@ namespace DoublyLinkedList.Tests
 
 
         static object[] Add_Success_Cases =
-                     {
-                            new int[] { 0 }, 
-                            new int[] { 0, 1 }, 
-                            new int[] { 0, 1, 2 }, 
-                            new int[] { 0, 1, 2, 3 }, 
-                     };
+        {
+            new int[] {0},
+            new int[] {0, 1},
+            new int[] {0, 1, 2},
+            new int[] {0, 1, 2, 3},
+        };
     }
 }

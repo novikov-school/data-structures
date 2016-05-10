@@ -1,4 +1,5 @@
 ﻿using System;
+
 namespace Queue.List
 {
     /// <summary>
@@ -10,7 +11,7 @@ namespace Queue.List
         // the queued items - the Last list item is the
         // newest queue item, the First is the oldest.
         // This is so LinkedList<T>.GetEnumerator "just works" 
-        System.Collections.Generic.LinkedList<T> _items = 
+        System.Collections.Generic.LinkedList<T> _items =
             new System.Collections.Generic.LinkedList<T>();
 
         /// <summary>
@@ -63,10 +64,7 @@ namespace Queue.List
         /// </summary>
         public int Count
         {
-            get
-            {
-                return _items.Count;
-            }
+            get { return _items.Count; }
         }
 
         /// <summary>

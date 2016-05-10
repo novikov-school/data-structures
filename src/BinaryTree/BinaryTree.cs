@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace BinaryTree
 {
     public class BinaryTree<T> : IEnumerable<T>
-        where T: IComparable<T>
+        where T : IComparable<T>
     {
         private BinaryTreeNode<T> _head;
         private int _count;
@@ -63,6 +63,7 @@ namespace BinaryTree
                 }
             }
         }
+
         #endregion
 
         /// <summary>
@@ -91,7 +92,7 @@ namespace BinaryTree
             BinaryTreeNode<T> current = _head;
             parent = null;
 
-                // while we don't have a match
+            // while we don't have a match
             while (current != null)
             {
                 int result = current.CompareTo(value);
@@ -119,6 +120,7 @@ namespace BinaryTree
         }
 
         #region Remove
+
         /// <summary>
         /// Removes the first occurance of the specified value from the tree.
         /// </summary>
@@ -195,7 +197,7 @@ namespace BinaryTree
                 // find the right's left-most child
                 BinaryTreeNode<T> leftmost = current.Right.Left;
                 BinaryTreeNode<T> leftmostParent = current.Right;
-                
+
                 while (leftmost.Left != null)
                 {
                     leftmostParent = leftmost;
@@ -233,9 +235,11 @@ namespace BinaryTree
 
             return true;
         }
+
         #endregion
 
         #region Pre-Order Traversal
+
         /// <summary>
         /// Performs the provided action on each binary tree value in pre-order traversal order.
         /// </summary>
@@ -254,9 +258,11 @@ namespace BinaryTree
                 PreOrderTraversal(action, node.Right);
             }
         }
+
         #endregion
 
         #region Post-Order Traversal
+
         /// <summary>
         /// Performs the provided action on each binary tree value in post-order traversal order.
         /// </summary>
@@ -275,9 +281,11 @@ namespace BinaryTree
                 action(node.Value);
             }
         }
+
         #endregion
 
         #region In-Order Enumeration
+
         /// <summary>
         /// Performs the provided action on each binary tree value in in-order traversal order.
         /// </summary>
@@ -375,6 +383,7 @@ namespace BinaryTree
         {
             return GetEnumerator();
         }
+
         #endregion
 
         /// <summary>
@@ -391,10 +400,7 @@ namespace BinaryTree
         /// </summary>
         public int Count
         {
-            get
-            {
-                return _count;
-            }
+            get { return _count; }
         }
     }
 }

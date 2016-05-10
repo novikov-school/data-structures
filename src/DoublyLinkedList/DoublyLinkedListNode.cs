@@ -1,5 +1,4 @@
-﻿
-namespace DoublyLinkedList
+﻿namespace DoublyLinkedList
 {
     /// <summary>
     /// A node in the LinkedList
@@ -25,7 +24,7 @@ namespace DoublyLinkedList
         /// The next node in the linked list (null if last node)
         /// </summary>
         public LinkedListNode<T> Next { get; set; }
-        
+
         /// <summary>
         /// The previous node in the linked list (null if first node)
         /// </summary>

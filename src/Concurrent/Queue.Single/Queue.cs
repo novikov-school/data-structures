@@ -28,7 +28,7 @@ namespace Queue.Single
             // if the array needs to grow
             if (_items.Length == _size)
             {
-                int newLength = (_size == 0) ? 4 : _size * 2;
+                int newLength = (_size == 0) ? 4 : _size*2;
 
                 T[] newArray = new T[newLength];
 
@@ -98,7 +98,6 @@ namespace Queue.Single
         /// Removes and returns the front item from the queue
         /// </summary>
         /// <returns>The front item from the queue</returns>
-
         public T Dequeue()
         {
             T value = _items[_head];
@@ -139,10 +138,7 @@ namespace Queue.Single
         /// </summary>
         public int Count
         {
-            get
-            {
-                return _size;
-            }
+            get { return _size; }
         }
 
         /// <summary>

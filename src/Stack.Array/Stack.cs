@@ -26,7 +26,7 @@ namespace Stack.Array
             if (_size == _items.Length)
             {
                 // initial size of 4, otherwise double the current length
-                int newLength = _size == 0 ? 4 : _size * 2;
+                int newLength = _size == 0 ? 4 : _size*2;
 
                 // allocate, copy and assign the new array
                 T[] newArray = new T[newLength];
@@ -73,10 +73,7 @@ namespace Stack.Array
         /// </summary>
         public int Count
         {
-            get
-            {
-                return _size;
-            }
+            get { return _size; }
         }
 
         /// <summary>
@@ -93,7 +90,7 @@ namespace Stack.Array
         /// <returns>The LIFO enumerator</returns>
         public System.Collections.Generic.IEnumerator<T> GetEnumerator()
         {
-            for (int i = _size-1; i >= 0; i--)
+            for (int i = _size - 1; i >= 0; i--)
             {
                 yield return _items[i];
             }

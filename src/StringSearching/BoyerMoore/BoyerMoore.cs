@@ -9,7 +9,7 @@ namespace StringSearching.BoyerMoore
     {
         public IEnumerable<ISearchMatch> Search(string pattern, string toSearch)
         {
-            if (pattern== null)
+            if (pattern == null)
             {
                 throw new ArgumentNullException("toFind");
             }
@@ -28,8 +28,9 @@ namespace StringSearching.BoyerMoore
                 {
                     int charactersLeftToMatch = pattern.Length - 1;
 
-                    while (charactersLeftToMatch >= 0 && 
-                           Compare(pattern[charactersLeftToMatch], toSearch[currentStartIndex + charactersLeftToMatch]) == 0)
+                    while (charactersLeftToMatch >= 0 &&
+                           Compare(pattern[charactersLeftToMatch], toSearch[currentStartIndex + charactersLeftToMatch]) ==
+                           0)
                     {
                         charactersLeftToMatch--;
                     }

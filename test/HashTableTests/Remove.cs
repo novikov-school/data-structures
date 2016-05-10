@@ -11,7 +11,6 @@ namespace HashTableTests
         {
             HashTable<string, int> table = new HashTable<string, int>();
             Assert.IsFalse(table.Remove("missing"), "Remove on an empty collection should return false");
-
         }
 
         [Test]

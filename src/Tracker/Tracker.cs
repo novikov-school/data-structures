@@ -5,36 +5,24 @@ namespace Tracker
 {
     public interface IPerformanceTracker
     {
-        long Comparisons
-        {
-            get;
-        }
+        long Comparisons { get; }
 
-        long Swaps
-        {
-            get;
-        }
+        long Swaps { get; }
 
         void Reset();
     }
 
     public class Tracker<T> : IPerformanceTracker
-        where T: IComparable<T>
+        where T : IComparable<T>
     {
         public long Comparisons
         {
-            get
-            {
-                return Interlocked.Read(ref _comparisons);
-            }
+            get { return Interlocked.Read(ref _comparisons); }
         }
 
         public long Swaps
         {
-            get
-            {
-                return Interlocked.Read(ref _swaps);
-            }
+            get { return Interlocked.Read(ref _swaps); }
         }
 
         public void Reset()

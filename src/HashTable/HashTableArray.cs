@@ -75,10 +75,7 @@ namespace HashTable
         /// </summary>
         public int Capacity
         {
-            get
-            {
-                return _array.Length;
-            }
+            get { return _array.Length; }
         }
 
         /// <summary>
@@ -95,7 +92,7 @@ namespace HashTable
         /// <summary>
         /// Returns an enumerator for all of the values in the node array
         /// </summary>
-        public IEnumerable<TValue> Values 
+        public IEnumerable<TValue> Values
         {
             get
             {
@@ -146,7 +143,7 @@ namespace HashTable
         // Maps a key to the array index based on hash code
         private int GetIndex(TKey key)
         {
-            return Math.Abs(key.GetHashCode() % Capacity);
+            return Math.Abs(key.GetHashCode()%Capacity);
         }
     }
 }

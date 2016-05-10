@@ -29,7 +29,7 @@ namespace StringHashingSamples
             {
                 unchecked
                 {
-                    currentHashValue += (int)c;
+                    currentHashValue += (int) c;
                 }
             }
 
@@ -96,7 +96,7 @@ namespace StringHashingSamples
         {
             if (index < str.Length)
             {
-                return (int)str[index];
+                return (int) str[index];
             }
 
             return 0;
