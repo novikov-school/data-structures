@@ -15,15 +15,9 @@ namespace Tracker
     public class Tracker<T> : IPerformanceTracker
         where T : IComparable<T>
     {
-        public long Comparisons
-        {
-            get { return Interlocked.Read(ref _comparisons); }
-        }
+        public long Comparisons => Interlocked.Read(ref _comparisons);
 
-        public long Swaps
-        {
-            get { return Interlocked.Read(ref _swaps); }
-        }
+        public long Swaps => Interlocked.Read(ref _swaps);
 
         public void Reset()
         {
