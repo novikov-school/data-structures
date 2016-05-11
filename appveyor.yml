@@ -2,7 +2,8 @@ version: build{build}
 
 branches:
   only:
-  - dotnet/csharp
+  - master
+  - dev
 
 cache:
   - packages -> **\packages.config
@@ -23,3 +24,5 @@ test:
   - BinaryTreeTests.dll
   - HashTableTests.dll
   - LinkedList.Tests.dll
+  - SortingTests.dll
+  - SetTests.dll
