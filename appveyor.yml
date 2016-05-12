@@ -26,3 +26,4 @@ test:
   - LinkedList.Tests.dll
   - SortingTests.dll
   - SetTests.dll
+  - AVLTreeTests.dll
