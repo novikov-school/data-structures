@@ -18,13 +18,14 @@
  *    SQL: Ivan Kolev, Stefka Nikolova
  */
 
+using Wintellect.PowerCollections;
+
 namespace DataStructuresEfficiency
 {
     using System;
     using System.Collections.Generic;
     using System.IO;
     using System.Linq;
-    using Slant.PowerCollections;
 
     public static class StudentRecordTest
     {
